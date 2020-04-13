@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method="post" action="verifyjsp.jsp">
+            Name:<input type="text" name="tbname"/><br><br>
+            Registration number:<input type="text" name="tbregd" /><br><br>
+            Branch:
+            <select name="branch">
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="IT">IT</option>
+            </select><br><br>
+            Section:
+            <select name="section">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select><br><br>
+            Gender:<br>
+            <input type="radio" name="gender" value="male"/>Male<br>
+            <input type="radio" name="gender" value="female"/>Female<br><br>
+            CGPA:<input type="text" name="tbcgpa"/>
+            <br><br><br><h3>Customise your Login Details:</h3>
+            Username:<input type="text" name="tbun"/><br><br>
+            Password:<input type="password" name="tbpwd"/><br><br>
+            <input type="submit" value="Register"/><br><br>
+        </form>
+    </body>
+</html>
