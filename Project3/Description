@@ -6,3 +6,4 @@ The user selects some books and add them to his/her cart. At the payment stage, 
 confirmation stage usually a books portal where he/she pays the cart total amount within a stipulated time period to get his/her order
 confirmed. Else session expires and redirected to the store. The user is restricted to click the refresh or back button while his/her
 session is active. If he/she does so session is invalidated immediately.
+ 
