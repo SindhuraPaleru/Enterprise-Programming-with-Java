@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="text-align: center;size: 15px">
+        <h:form enctype="multipart/form-data">
+            <table border="1" cellpadding="10" style="border-collapse: collapse">
+                <tr>
+                    <td>Name:</td>
+                    <td>#{mb.name}</td>
+                </tr>
+                <tr>
+                    <td>Registration number:</td>
+                    <td>#{mb.regdno}</td>
+                </tr>
+                <tr>
+                    <td>Year:</td>
+                    <td>#{mb.year}</td>
+                </tr>
+                <tr>
+                    <td>Branch:</td>
+                    <td>#{mb.branch}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>#{mb.email}</td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:</td>
+                    <td>#{mb.mobile}</td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td>#{mb.state}</td>
+                </tr>
+                <tr>
+                    <td>District:</td>
+                    <td>#{mb.selectDistrict}</td>
+                </tr>
+                <tr>
+     <td colspan="2"> Image:<br></br><h:graphicImage url="#{mb.fileName}" height="300px" width="300px"/></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
