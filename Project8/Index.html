@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chatting</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" >
+var websocket=new WebSocket("ws://localhost:36430/Lab8_58/chat");
+websocket.onmessage=function processMessage(message)
+{
+if(message.data!=null){
+show.value += message.data+"\n";
+}
+}
+function sendmessage(){
+websocket.send(msg.value);
+msg.value="";
+}
+</script>
+</head>
+<body>
+Message:<input type="text" id="msg"/><br/>
+<input id="b1" value="Send" type="submit" onclick="sendmessage()"/><br/><br/><br/>
+<textarea id="show" rows="10" cols="50" readonly="readonly"></textarea>
+</body>
+</html> 
