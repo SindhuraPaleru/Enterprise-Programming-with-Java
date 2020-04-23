@@ -1,0 +1,2 @@
+DESCRIPTION:
+In this application we calculate the nearest prime number for the entered number. In this we use a programmatic timer that enables programming the EJB service in a stateless bean. EJB timer service , which is a service provided by the ejb container helps in creating timer and schedule call back when the timer expires.
