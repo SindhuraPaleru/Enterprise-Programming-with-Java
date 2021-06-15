@@ -1,0 +1,48 @@
+var u = window.location.href;
+var arr = u.split("/");
+var m3_uri = arr[0] + "//" + arr[2];
+var orderNumber = ListControl.ListView.GetValueByColumnName("ORNO");
+if (orderNumber.length > 1) {
+     obj.showWarning('Warning', 'Select Only One row!')
+} else if (orderNumber.length == 0) {
+     obj.showWarning('Warning', 'Select a row to continue!')
+} else {
+	let apiUri = m3_uri+ "/m3api-rest/v2/execute/OIS100MI/LstLine?CONO=100&ORNO="+orderNumber[0];
+	callM3API(apiUri).then(response => {     
+            if(response["nrOfFailedTransactions"]>0)
+            {
+                let r = response["results"][0]["errorMessage"];
+                console.log(r);
+                obj.showWarning('Report', 'API Call Failed!'+r);
+            }
+            else
+            { 
+                var max_item = response["results"][0]["records"][0];
+                var order_line = 0;
+                for (i in response["results"][0]["records"]){
+                    if(Number(max_item["ORQT"])<Number(response["results"][0]["records"][i]["ORQT"]))
+                    {
+                        max_item = response["results"][0]["records"][i];
+                        order_line = i;
+                    }
+                }
+
+                var msg = "Called API Successfully! Max ordered quantity orderline is:"+order_line +" with ORQT:"+max_item["ITNO"];
+                ConfirmDialog.ShowMessageDialog({
+                    dialogType: "Information",
+                    header: "Report" ,
+                    message: msg
+                });
+
+            }
+            
+        }).catch(
+            err => {
+                console.log(err);
+                obj.showWarning('Report', 'API Call Failed!')
+                
+            }
+        );
+
+
+}
